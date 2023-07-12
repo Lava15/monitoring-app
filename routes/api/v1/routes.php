@@ -2,6 +2,9 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::prefix('v1')->as('v1:')->group(
+Route::prefix('home')->as('home:')->group(
     base_path('routes/api/v1/home.php')
+);
+Route::prefix('sites')->as('sites:')->group(
+    base_path('routes/api/v1/sites.php')
 );

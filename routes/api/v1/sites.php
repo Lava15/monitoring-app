@@ -5,5 +5,5 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return  new JsonResponse('Welcome to home route api');
-});
+    return new JsonResponse('List of all sites for checking');
+})->name('urls');

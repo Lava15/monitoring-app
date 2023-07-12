@@ -10,6 +10,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 
-Route::prefix('v1')->as('v1:')->group(function () {
-    base_path('routes/api/v1/routes.php');
-});
+Route::prefix('v1')->as('v1:')->group(
+    base_path('routes/api/v1/routes.php')
+);
