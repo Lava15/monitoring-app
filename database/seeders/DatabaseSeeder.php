@@ -4,19 +4,22 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Symfony\Component\HttpFoundation\Response;
 
 class DatabaseSeeder extends Seeder
 {
     /**
+     * @return void
      * Seed the application's database.
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        if (!app()->isProduction()) {
+            $this->call([
+                SiteSeeder::class,
+            ]);
+        } else {
+            abort(Response::HTTP_NOT_ACCEPTABLE);
+        }
     }
 }
