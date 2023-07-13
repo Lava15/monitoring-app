@@ -17,28 +17,34 @@ class CheckSites extends Command
     public function handle(): void
     {
         $sites = Site::all();
-
         foreach ($sites as $site) {
             foreach ($site->urls as $url) {
                 try {
-                    $start = microtime(true);
                     $response = Http::get($url['url']);
-                    $end = microtime(true);
-                    dd($response);
-                    $responseData = [
+                    $site->checks()->create([
+                        'result' => json_encode([
+                            'status' => 'ok',
+                            'url' => $url['url']
+                        ]),
                         'status_code' => $response->status(),
-                        'response_time' => $end - $start,
+                        'response_time' => 12,
                         'headers' => json_encode($response->headers()),
-                        'site_id' => $site->id,
-                        'frequency' => 50,
-                        'result' => '200'
-                    ];
-                } catch (Exception $e) {
-                    // If there is an error, record it
-                    $responseData = ['error' => $e->getMessage(), 'site_id' => $site->id];
+                        'frequency' => 1
+                    ]);
+                } catch (\Exception $e) {
+                    // Create failed check record
+                    $site->checks()->create([
+                        'result' => json_encode([
+                            'status' => 'failed',
+                            'url' => $url
+                        ]),
+                        'status_code' => null,
+                        'response_time' => null,
+                        'headers' => json_encode([]),
+                        'error' => $e->getMessage(),
+                        'frequency' => 1
+                    ]);
                 }
-
-                Check::query()->create($responseData);
             }
         }
     }

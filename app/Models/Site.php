@@ -36,6 +36,7 @@ class Site extends Model
     protected $casts = [
         'urls' => 'array'
     ];
+
     /**
      * Get the checks associated with the Site.
      *
@@ -44,8 +45,7 @@ class Site extends Model
     public function checks(): HasMany
     {
         return $this->hasMany(
-            related: Check::class,
-            foreignKey:'check_id'
+            related: Check::class
         );
     }
 }
