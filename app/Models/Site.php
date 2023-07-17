@@ -13,6 +13,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Site extends Model
 {
+    use HasFactory;
+
     /**
      * The properties that are mass assignable.
      *
