@@ -15,7 +15,10 @@ class SiteFactory extends Factory
     public function definition(): array
     {
         return [
-
+            'name' => 'Google',
+            'urls' => [
+                ['endpoint' => 'home', 'url' => 'https://google.com']
+            ]
         ];
     }
 }

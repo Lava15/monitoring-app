@@ -21,6 +21,7 @@ class CheckSites extends Command
             foreach ($site->urls as $url) {
                 try {
                     $response = Http::get($url['url']);
+                    dd($response);
                     $site->checks()->create([
                         'result' => json_encode([
                             'status' => 'ok',

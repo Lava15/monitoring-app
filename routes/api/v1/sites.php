@@ -1,9 +1,7 @@
 <?php
 
-use Illuminate\Http\JsonResponse;
+use App\Http\Controllers\V1\SiteController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    return new JsonResponse('List of all sites for checking');
-})->name('urls');
+Route::get('/', [SiteController::class,'index'])->name('urls');
