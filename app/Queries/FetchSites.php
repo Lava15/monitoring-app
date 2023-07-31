@@ -12,11 +12,9 @@ class FetchSites
     {
         return QueryBuilder::for(
             subject: Site::class
-        )
-            ->allowedIncludes(
-                includes: $includes
-            )
-            ->allowedFilters($filters)
+        )->allowedIncludes(
+            includes: $includes
+        )->allowedFilters($filters)
             ->getEloquentBuilder();
     }
 }
