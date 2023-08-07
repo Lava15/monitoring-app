@@ -16,7 +16,6 @@ return new class extends Migration {
 
             $table->json('result');
             $table->integer('status_code');
-            $table->unsignedInteger('frequency');
 
             $table->string('response_time')->nullable();
             $table->longText('headers')->nullable();
