@@ -22,7 +22,8 @@ final class SiteResource extends JsonResource
             'urls' => $this->resource->urls,
             'created' => new DateResource(
                 resource: $this->resource->created_at
-            )
+            ),
+            'checks' => new CheckResource($this->resource),
         ];
     }
 }

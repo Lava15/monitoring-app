@@ -14,8 +14,11 @@ class CheckSiteJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    public function __construct(private readonly array|object $site)
-    {}
+    public function __construct(
+        private readonly array|object $site,
+    )
+    {
+    }
 
     public function handle(): void
     {
@@ -35,7 +38,6 @@ class CheckSiteJob implements ShouldQueue
                     'headers' => json_encode($response->headers()),
                 ]);
             } catch (Exception $e) {
-                // Create failed check record
                 $this->site->checks()->create([
                     'result' => json_encode([
                         'status' => 'failed',

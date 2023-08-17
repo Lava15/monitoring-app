@@ -23,9 +23,8 @@ class SiteController extends Controller
     {
         return new CollectionResponse(
             data: SiteResource::collection(
-                $this->query->handle(
-                    includes: ['checks']
-                )->get()
+                $this->query->handle(['checks'])
+                    ->get()
             ),
         );
     }
