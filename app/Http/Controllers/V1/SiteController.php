@@ -8,8 +8,7 @@ use App\Http\Responses\V1\CollectionResponse;
 use App\Models\Site;
 use App\Queries\FetchSites;
 use Illuminate\Contracts\Support\Responsable;
-use Illuminate\Http\JsonResponse;
-use Symfony\Component\HttpFoundation\Response;
+
 
 class SiteController extends Controller
 {
@@ -23,7 +22,8 @@ class SiteController extends Controller
     {
         return new CollectionResponse(
             data: SiteResource::collection(
-                $this->query->handle(['checks'])
+                Site::query()
+                    ->with('checks')
                     ->get()
             ),
         );

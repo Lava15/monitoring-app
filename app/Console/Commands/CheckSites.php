@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Jobs\CheckSiteJob;
+use App\Jobs\MakeScreenshotJob;
 use App\Models\Site;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
@@ -18,6 +19,7 @@ class CheckSites extends Command
         $sites = Site::all();
         foreach ($sites as $site) {
             CheckSiteJob::dispatch($site);
+            MakeScreenshotJob::dispatch($site);
         }
     }
 }

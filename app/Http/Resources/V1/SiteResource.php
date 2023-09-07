@@ -3,6 +3,7 @@
 namespace App\Http\Resources\V1;
 
 use App\Http\Resources\DateResource;
+use App\Models\Check;
 use App\Models\Site;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -13,6 +14,7 @@ final class SiteResource extends JsonResource
      * @param Request $request
      * @return array
      * @property-read Site $resource
+     * @property-read Check $checks
      */
     public function toArray(Request $request): array
     {
@@ -23,7 +25,7 @@ final class SiteResource extends JsonResource
             'created' => new DateResource(
                 resource: $this->resource->created_at
             ),
-            'checks' => new CheckResource($this->resource),
+            'checks' => CheckResource::collection($this->whenLoaded('checks')),
         ];
     }
 }
