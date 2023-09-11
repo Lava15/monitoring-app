@@ -7,5 +7,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('telegram')->as('telegram:')->group(function () {
     Route::post('/', [TelegramWebhhokController::class, 'handleMessage']);
-    Route::post('/webhook', [TelegramWebhhokController::class, 'handleRequest'])->name('webhook');
+    Route::post('/send-file', [TelegramWebhhokController::class, 'sendPhoto'])->name('send-file');
 });

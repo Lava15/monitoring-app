@@ -2,6 +2,8 @@
 
 namespace App\Jobs;
 
+use App\Interfaces\TelegramServiceInterface;
+use App\Services\Webhooks\TelegramService;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -21,10 +23,9 @@ class MakeScreenshotJob implements ShouldQueue
     public function __construct(
         private readonly array|object $site,
     )
-    {
-    }
+    {}
 
-    public function handle(): void
+    public function handle()
     {
         foreach ($this->site->urls as $url) {
             $shot = Browsershot::url($url['url'])
@@ -36,8 +37,7 @@ class MakeScreenshotJob implements ShouldQueue
             $shotName = $this->site->name . '-' . now()->format('h:i') . '.jpg';
 
             Storage::drive('public')->put($shotName, $shot);
-
-
+            TelegramService::sendFiles($shotName);
         }
     }
 }

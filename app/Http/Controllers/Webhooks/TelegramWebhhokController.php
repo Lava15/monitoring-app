@@ -17,4 +17,9 @@ class TelegramWebhhokController extends Controller
     {
         $this->service->sendMessage();
     }
+
+//    public function sendPhoto()
+//    {
+//        $this->service->sendFiles();
+//    }
 }
