@@ -4,7 +4,10 @@ namespace App\Interfaces;
 
 interface TelegramServiceInterface
 {
-    public function sendMessage(): void;
+    public static function sendMessage(
+        int|string $status,
+        int|string $totalTime,
+    ): void;
 
     public static function sendFiles(string $filename): void;
 }

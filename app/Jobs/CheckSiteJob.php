@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Services\Webhooks\TelegramService;
 use Exception;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -24,6 +25,7 @@ class CheckSiteJob implements ShouldQueue
     {
         foreach ($this->site->urls as $url) {
             try {
+
                 $start = now();
                 $response = Http::get($url['url']);
                 $end = now();
@@ -37,6 +39,12 @@ class CheckSiteJob implements ShouldQueue
                     'response_time' => $totalTime,
                     'headers' => json_encode($response->headers()),
                 ]);
+
+                TelegramService::sendMessage(
+                    $response->status(),
+                    $totalTime
+                );
+
             } catch (Exception $e) {
                 $this->site->checks()->create([
                     'result' => json_encode([

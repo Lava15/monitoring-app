@@ -7,12 +7,17 @@ use Illuminate\Support\Facades\Http;
 
 class TelegramService implements TelegramServiceInterface
 {
-    public function sendMessage(): void
+    public static function sendMessage(
+        int|string $status,
+        int|string $totalTime
+    ): void
     {
         Http::post(config('telegram.telegram_api_url') . 'bot' . config('telegram.bot_token') . '/sendMessage',
             [
                 'chat_id' => (int)config('telegram.chat_id'),
-                'text' => 'testing Demo',
+                'text' => "Status code:  $status
+                Total time: $totalTime seconds
+                ",
                 'parse_mode' => 'html'
             ]);
     }
