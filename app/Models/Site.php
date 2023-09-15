@@ -39,15 +39,8 @@ class Site extends Model
         'urls' => 'array'
     ];
 
-    /**
-     * Get the checks associated with the Site.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
     public function checks(): HasMany
     {
-        return $this->hasMany(
-            related: Check::class
-        );
+        return $this->hasMany(Check::class);
     }
 }

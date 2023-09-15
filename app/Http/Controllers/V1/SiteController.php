@@ -22,9 +22,7 @@ class SiteController extends Controller
     {
         return new CollectionResponse(
             data: SiteResource::collection(
-                Site::query()
-                    ->with('checks')
-                    ->get()
+                $this->query->handle(['checks'])->paginate(10)
             ),
         );
     }

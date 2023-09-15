@@ -8,13 +8,13 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 class FetchSites
 {
-    public function handle(array $includes = [], array $filters = []): Builder
+    public function handle(array $includes = [], array $filters = [])
     {
         return QueryBuilder::for(
             subject: Site::class
-        )->allowedIncludes(
-            includes: $includes
-        )->allowedFilters($filters)
-            ->getEloquentBuilder();
+        )
+            ->with($includes)
+            ->allowedIncludes($includes)
+            ->allowedFilters($filters);
     }
 }

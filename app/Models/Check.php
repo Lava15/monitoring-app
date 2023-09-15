@@ -40,6 +40,7 @@ class Check extends Model
         'error',
         'completed_at',
     ];
+
     /**
      * Get the site that owns the current model instance.
      *
@@ -47,9 +48,6 @@ class Check extends Model
      */
     public function site(): BelongsTo
     {
-        return $this->belongsTo(
-            related: Site::class,
-            foreignKey: 'site_id'
-        );
+        return $this->belongsTo(Site::class);
     }
 }

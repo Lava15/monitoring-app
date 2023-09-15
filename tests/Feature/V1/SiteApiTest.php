@@ -15,7 +15,27 @@ it('can create a site ', function () {
     ]);
 });
 
-todo('can create a check');
+it('can create a check record', function () {
+    $site = Site::factory()->create();
+    $check = $site->checks()->create([
+        'site_id' => $site->id,
+        'result' => 'Fake result',
+        'status_code' => 200,
+        'response_time' => '500ms',
+        'headers' => '{}',
+        'error' => null,
+        'complete_at' => now(),
+    ]);
+
+    $this->assertDatabaseHas('checks', [
+        'site_id' => $site->id,
+        'result' => 'Fake result',
+        'status_code' => 200,
+        'response_time' => '500ms',
+        'headers' => '{}',
+        'error' => null,
+    ]);
+});
 todo('site has many checks');
 todo('check belongs to site', function () {
     $site = Site::factory()->create();
