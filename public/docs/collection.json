@@ -1,0 +1,21 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/uptime.test"
+        }
+    ],
+    "info": {
+        "name": "Monitoring APP",
+        "_postman_id": "d3cbd3bb-43d0-49b7-933c-0feec76e5055",
+        "description": "Checks uptime of sites",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [],
+    "auth": {
+        "type": "noauth"
+    }
+}

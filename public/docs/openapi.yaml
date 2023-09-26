@@ -1,0 +1,10 @@
+openapi: 3.0.3
+info:
+  title: 'Monitoring APP'
+  description: 'Checks uptime of sites'
+  version: 1.0.0
+servers:
+  -
+    url: 'http://uptime.test'
+paths: []
+tags: []
