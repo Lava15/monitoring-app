@@ -9,4 +9,4 @@ uses(
     CreatesApplication::class,
     LazilyRefreshDatabase::class,
 )->
-in('Feature', 'Unit');
+in(__DIR__);
