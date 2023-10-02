@@ -7,25 +7,19 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Responses\MessageResponse;
 use App\Services\Auth\AccessTokenService;
-use Illuminate\Contracts\Auth\Factory;
 use Illuminate\Contracts\Support\Responsable;
-use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Contracts\Auth\Factory;
 
-class AuthenticationController extends Controller
+class LoginController extends Controller
 {
+
     public function __construct(
         private readonly Factory            $auth,
         private readonly AccessTokenService $tokenService,
     )
     {
     }
-
-    /**
-     * @param LoginRequest $request
-     * @return Responsable
-     * @throws AuthenticationException
-     */
     public function login(LoginRequest $request): Responsable
     {
         if (!$this->auth->guard()->attempt($request->only('email', 'password'))) {
@@ -41,10 +35,5 @@ class AuthenticationController extends Controller
             data: $token,
             status: Response::HTTP_CREATED,
         );
-    }
-
-    public function register()
-    {
-
     }
 }

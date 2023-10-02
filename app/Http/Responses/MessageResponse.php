@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 class MessageResponse implements Responsable
 {
     public function __construct(
-        private readonly string       $data,
+        private readonly string|array       $data,
         private readonly int|Response $status = Response::HTTP_OK,
     )
     {
