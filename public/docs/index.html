@@ -66,6 +66,38 @@
                     <a href="#authenticating-requests">Authenticating requests</a>
                 </li>
                             </ul>
+                    <ul id="tocify-header-authentication" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="authentication">
+                    <a href="#authentication">Authentication</a>
+                </li>
+                                    <ul id="tocify-subheader-authentication" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="authentication-POSTapi-v1-login">
+                                <a href="#authentication-POSTapi-v1-login">Login</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="authentication-POSTapi-v1-register">
+                                <a href="#authentication-POSTapi-v1-register">Register</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-endpoints" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="endpoints">
+                    <a href="#endpoints">Endpoints</a>
+                </li>
+                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-user">
+                                <a href="#endpoints-GETapi-user">GET api/user</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-home">
+                                <a href="#endpoints-GETapi-v1-home">GET api/v1/home</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-sites">
+                                <a href="#endpoints-GETapi-v1-sites">Retrieve a collection of sites.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-webhook-telegram">
+                                <a href="#endpoints-POSTapi-webhook-telegram">POST api/webhook/telegram</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
             </div>
 
     <ul class="toc-footer" id="toc-footer">
@@ -75,7 +107,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: September 22, 2023</li>
+        <li>Last updated: October 6, 2023</li>
     </ul>
 </div>
 
@@ -94,7 +126,1048 @@ You can switch the language used with the tabs at the top right (or from the nav
         <h1 id="authenticating-requests">Authenticating requests</h1>
 <p>This API is not authenticated.</p>
 
-        
+        <h1 id="authentication">Authentication</h1>
+
+    <p>APIs fo register and login</p>
+
+                                <h2 id="authentication-POSTapi-v1-login">Login</h2>
+
+<p>
+</p>
+
+<p>Log in a user with the provided credentials.</p>
+
+<span id="example-requests-POSTapi-v1-login">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://uptime.test/api/v1/login" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"email\": \"ida.balistreri@example.com\",
+    \"password\": \"d%xPl1~qWuTt\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://uptime.test/api/v1/login"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "ida.balistreri@example.com",
+    "password": "d%xPl1~qWuTt"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-login">
+</span>
+<span id="execution-results-POSTapi-v1-login" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-login"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-login"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-login">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-login" data-method="POST"
+      data-path="api/v1/login"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-login', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-login"
+                    onclick="tryItOut('POSTapi-v1-login');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-login"
+                    onclick="cancelTryOut('POSTapi-v1-login');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-login"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/login</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-login"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-login"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-v1-login"
+               value="ida.balistreri@example.com"
+               data-component="body">
+    <br>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>ida.balistreri@example.com</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="password"                data-endpoint="POSTapi-v1-login"
+               value="d%xPl1~qWuTt"
+               data-component="body">
+    <br>
+<p>Example: <code>d%xPl1~qWuTt</code></p>
+        </div>
+        </form>
+
+                    <h2 id="authentication-POSTapi-v1-register">Register</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-register">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://uptime.test/api/v1/register" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"noimlpi\",
+    \"email\": \"mhowell@example.com\",
+    \"password\": \"G{&gt;Go9D\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://uptime.test/api/v1/register"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "noimlpi",
+    "email": "mhowell@example.com",
+    "password": "G{&gt;Go9D"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-register">
+</span>
+<span id="execution-results-POSTapi-v1-register" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-register"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-register"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-register" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-register">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-register" data-method="POST"
+      data-path="api/v1/register"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-register', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-register"
+                    onclick="tryItOut('POSTapi-v1-register');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-register"
+                    onclick="cancelTryOut('POSTapi-v1-register');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-register"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/register</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-register"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-register"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="POSTapi-v1-register"
+               value="noimlpi"
+               data-component="body">
+    <br>
+<p>Must be at least 2 characters. Must not be greater than 255 characters. Example: <code>noimlpi</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-v1-register"
+               value="mhowell@example.com"
+               data-component="body">
+    <br>
+<p>Must be a valid email address. Example: <code>mhowell@example.com</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="password"                data-endpoint="POSTapi-v1-register"
+               value="G{>Go9D"
+               data-component="body">
+    <br>
+<p>Example: <code>G{&gt;Go9D</code></p>
+        </div>
+        </form>
+
+                <h1 id="endpoints">Endpoints</h1>
+
+    
+
+                                <h2 id="endpoints-GETapi-user">GET api/user</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-user">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://uptime.test/api/user" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://uptime.test/api/user"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-user">
+    </span>
+<span id="execution-results-GETapi-user" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-user"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-user"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-user" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-user">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-user" data-method="GET"
+      data-path="api/user"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-user', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-user"
+                    onclick="tryItOut('GETapi-user');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-user"
+                    onclick="cancelTryOut('GETapi-user');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-user"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/user</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-user"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-user"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-GETapi-v1-home">GET api/v1/home</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-home">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://uptime.test/api/v1/home" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://uptime.test/api/v1/home"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-home">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 55
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">&quot;Welcome to home route api&quot;</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-home" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-home"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-home"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-home" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-home">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-home" data-method="GET"
+      data-path="api/v1/home"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-home', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-home"
+                    onclick="tryItOut('GETapi-v1-home');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-home"
+                    onclick="cancelTryOut('GETapi-v1-home');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-home"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/home</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-home"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-home"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-GETapi-v1-sites">Retrieve a collection of sites.</h2>
+
+<p>
+</p>
+
+<p>Returns response to client as json</p>
+
+<span id="example-requests-GETapi-v1-sites">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://uptime.test/api/v1/sites" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://uptime.test/api/v1/sites"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-sites">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 54
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">[
+    {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;Goggle&quot;,
+        &quot;urls&quot;: [
+            {
+                &quot;Home&quot;: &quot;/&quot;,
+                &quot;url&quot;: &quot;https://google.com&quot;
+            }
+        ],
+        &quot;created&quot;: {
+            &quot;human&quot;: &quot;1 month ago&quot;,
+            &quot;timestamp&quot;: 1691770899,
+            &quot;string&quot;: &quot;2023-08-11 16:21:39&quot;
+        },
+        &quot;checks&quot;: [
+            {
+                &quot;id&quot;: 29,
+                &quot;result&quot;: &quot;{\&quot;status\&quot;:\&quot;ok\&quot;,\&quot;url\&quot;:\&quot;https:\\/\\/google.com\&quot;}&quot;,
+                &quot;status&quot;: 200,
+                &quot;response_time&quot;: &quot;1824&quot;,
+                &quot;created&quot;: {
+                    &quot;human&quot;: &quot;3 weeks ago&quot;,
+                    &quot;timestamp&quot;: 1694450436,
+                    &quot;string&quot;: &quot;2023-09-11 16:40:36&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 32,
+                &quot;result&quot;: &quot;{\&quot;status\&quot;:\&quot;ok\&quot;,\&quot;url\&quot;:\&quot;https:\\/\\/google.com\&quot;}&quot;,
+                &quot;status&quot;: 200,
+                &quot;response_time&quot;: &quot;926&quot;,
+                &quot;created&quot;: {
+                    &quot;human&quot;: &quot;3 weeks ago&quot;,
+                    &quot;timestamp&quot;: 1694450448,
+                    &quot;string&quot;: &quot;2023-09-11 16:40:48&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 35,
+                &quot;result&quot;: &quot;{\&quot;status\&quot;:\&quot;ok\&quot;,\&quot;url\&quot;:\&quot;https:\\/\\/google.com\&quot;}&quot;,
+                &quot;status&quot;: 200,
+                &quot;response_time&quot;: &quot;954&quot;,
+                &quot;created&quot;: {
+                    &quot;human&quot;: &quot;3 weeks ago&quot;,
+                    &quot;timestamp&quot;: 1694450460,
+                    &quot;string&quot;: &quot;2023-09-11 16:41:00&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 19,
+                &quot;result&quot;: &quot;{\&quot;status\&quot;:\&quot;ok\&quot;,\&quot;url\&quot;:\&quot;https:\\/\\/google.com\&quot;}&quot;,
+                &quot;status&quot;: 200,
+                &quot;response_time&quot;: &quot;1104&quot;,
+                &quot;created&quot;: {
+                    &quot;human&quot;: &quot;3 weeks ago&quot;,
+                    &quot;timestamp&quot;: 1694450398,
+                    &quot;string&quot;: &quot;2023-09-11 16:39:58&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 20,
+                &quot;result&quot;: &quot;{\&quot;status\&quot;:\&quot;ok\&quot;,\&quot;url\&quot;:\&quot;https:\\/\\/google.com\&quot;}&quot;,
+                &quot;status&quot;: 200,
+                &quot;response_time&quot;: &quot;1342&quot;,
+                &quot;created&quot;: {
+                    &quot;human&quot;: &quot;3 weeks ago&quot;,
+                    &quot;timestamp&quot;: 1694450400,
+                    &quot;string&quot;: &quot;2023-09-11 16:40:00&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 23,
+                &quot;result&quot;: &quot;{\&quot;status\&quot;:\&quot;ok\&quot;,\&quot;url\&quot;:\&quot;https:\\/\\/google.com\&quot;}&quot;,
+                &quot;status&quot;: 200,
+                &quot;response_time&quot;: &quot;1088&quot;,
+                &quot;created&quot;: {
+                    &quot;human&quot;: &quot;3 weeks ago&quot;,
+                    &quot;timestamp&quot;: 1694450413,
+                    &quot;string&quot;: &quot;2023-09-11 16:40:13&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 26,
+                &quot;result&quot;: &quot;{\&quot;status\&quot;:\&quot;ok\&quot;,\&quot;url\&quot;:\&quot;https:\\/\\/google.com\&quot;}&quot;,
+                &quot;status&quot;: 200,
+                &quot;response_time&quot;: &quot;1108&quot;,
+                &quot;created&quot;: {
+                    &quot;human&quot;: &quot;3 weeks ago&quot;,
+                    &quot;timestamp&quot;: 1694450424,
+                    &quot;string&quot;: &quot;2023-09-11 16:40:24&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 38,
+                &quot;result&quot;: &quot;{\&quot;status\&quot;:\&quot;ok\&quot;,\&quot;url\&quot;:\&quot;https:\\/\\/google.com\&quot;}&quot;,
+                &quot;status&quot;: 200,
+                &quot;response_time&quot;: &quot;1097&quot;,
+                &quot;created&quot;: {
+                    &quot;human&quot;: &quot;3 weeks ago&quot;,
+                    &quot;timestamp&quot;: 1694450790,
+                    &quot;string&quot;: &quot;2023-09-11 16:46:30&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 41,
+                &quot;result&quot;: &quot;{\&quot;status\&quot;:\&quot;ok\&quot;,\&quot;url\&quot;:\&quot;https:\\/\\/google.com\&quot;}&quot;,
+                &quot;status&quot;: 200,
+                &quot;response_time&quot;: &quot;1055&quot;,
+                &quot;created&quot;: {
+                    &quot;human&quot;: &quot;3 weeks ago&quot;,
+                    &quot;timestamp&quot;: 1694450948,
+                    &quot;string&quot;: &quot;2023-09-11 16:49:08&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 44,
+                &quot;result&quot;: &quot;{\&quot;status\&quot;:\&quot;ok\&quot;,\&quot;url\&quot;:\&quot;https:\\/\\/google.com\&quot;}&quot;,
+                &quot;status&quot;: 200,
+                &quot;response_time&quot;: &quot;875&quot;,
+                &quot;created&quot;: {
+                    &quot;human&quot;: &quot;3 weeks ago&quot;,
+                    &quot;timestamp&quot;: 1694705035,
+                    &quot;string&quot;: &quot;2023-09-14 15:23:55&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 47,
+                &quot;result&quot;: &quot;{\&quot;status\&quot;:\&quot;ok\&quot;,\&quot;url\&quot;:\&quot;https:\\/\\/google.com\&quot;}&quot;,
+                &quot;status&quot;: 200,
+                &quot;response_time&quot;: &quot;824&quot;,
+                &quot;created&quot;: {
+                    &quot;human&quot;: &quot;3 weeks ago&quot;,
+                    &quot;timestamp&quot;: 1694705304,
+                    &quot;string&quot;: &quot;2023-09-14 15:28:24&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 50,
+                &quot;result&quot;: &quot;{\&quot;status\&quot;:\&quot;ok\&quot;,\&quot;url\&quot;:\&quot;https:\\/\\/google.com\&quot;}&quot;,
+                &quot;status&quot;: 200,
+                &quot;response_time&quot;: &quot;889&quot;,
+                &quot;created&quot;: {
+                    &quot;human&quot;: &quot;3 weeks ago&quot;,
+                    &quot;timestamp&quot;: 1694705396,
+                    &quot;string&quot;: &quot;2023-09-14 15:29:56&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 53,
+                &quot;result&quot;: &quot;{\&quot;status\&quot;:\&quot;ok\&quot;,\&quot;url\&quot;:\&quot;https:\\/\\/google.com\&quot;}&quot;,
+                &quot;status&quot;: 200,
+                &quot;response_time&quot;: &quot;835&quot;,
+                &quot;created&quot;: {
+                    &quot;human&quot;: &quot;3 weeks ago&quot;,
+                    &quot;timestamp&quot;: 1694706002,
+                    &quot;string&quot;: &quot;2023-09-14 15:40:02&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 56,
+                &quot;result&quot;: &quot;{\&quot;status\&quot;:\&quot;ok\&quot;,\&quot;url\&quot;:\&quot;https:\\/\\/google.com\&quot;}&quot;,
+                &quot;status&quot;: 200,
+                &quot;response_time&quot;: &quot;3904&quot;,
+                &quot;created&quot;: {
+                    &quot;human&quot;: &quot;3 weeks ago&quot;,
+                    &quot;timestamp&quot;: 1694706513,
+                    &quot;string&quot;: &quot;2023-09-14 15:48:33&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 60,
+                &quot;result&quot;: &quot;{\&quot;status\&quot;:\&quot;ok\&quot;,\&quot;url\&quot;:\&quot;https:\\/\\/google.com\&quot;}&quot;,
+                &quot;status&quot;: 200,
+                &quot;response_time&quot;: &quot;834&quot;,
+                &quot;created&quot;: {
+                    &quot;human&quot;: &quot;3 weeks ago&quot;,
+                    &quot;timestamp&quot;: 1694706855,
+                    &quot;string&quot;: &quot;2023-09-14 15:54:15&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 63,
+                &quot;result&quot;: &quot;{\&quot;status\&quot;:\&quot;ok\&quot;,\&quot;url\&quot;:\&quot;https:\\/\\/google.com\&quot;}&quot;,
+                &quot;status&quot;: 200,
+                &quot;response_time&quot;: &quot;1273&quot;,
+                &quot;created&quot;: {
+                    &quot;human&quot;: &quot;3 weeks ago&quot;,
+                    &quot;timestamp&quot;: 1694706929,
+                    &quot;string&quot;: &quot;2023-09-14 15:55:29&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 66,
+                &quot;result&quot;: &quot;{\&quot;status\&quot;:\&quot;ok\&quot;,\&quot;url\&quot;:\&quot;https:\\/\\/google.com\&quot;}&quot;,
+                &quot;status&quot;: 200,
+                &quot;response_time&quot;: &quot;910&quot;,
+                &quot;created&quot;: {
+                    &quot;human&quot;: &quot;3 weeks ago&quot;,
+                    &quot;timestamp&quot;: 1694707104,
+                    &quot;string&quot;: &quot;2023-09-14 15:58:24&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 69,
+                &quot;result&quot;: &quot;{\&quot;status\&quot;:\&quot;ok\&quot;,\&quot;url\&quot;:\&quot;https:\\/\\/google.com\&quot;}&quot;,
+                &quot;status&quot;: 200,
+                &quot;response_time&quot;: &quot;901&quot;,
+                &quot;created&quot;: {
+                    &quot;human&quot;: &quot;3 weeks ago&quot;,
+                    &quot;timestamp&quot;: 1694707175,
+                    &quot;string&quot;: &quot;2023-09-14 15:59:35&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 72,
+                &quot;result&quot;: &quot;{\&quot;status\&quot;:\&quot;ok\&quot;,\&quot;url\&quot;:\&quot;https:\\/\\/google.com\&quot;}&quot;,
+                &quot;status&quot;: 200,
+                &quot;response_time&quot;: &quot;839&quot;,
+                &quot;created&quot;: {
+                    &quot;human&quot;: &quot;3 weeks ago&quot;,
+                    &quot;timestamp&quot;: 1694707248,
+                    &quot;string&quot;: &quot;2023-09-14 16:00:48&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 75,
+                &quot;result&quot;: &quot;{\&quot;status\&quot;:\&quot;ok\&quot;,\&quot;url\&quot;:\&quot;https:\\/\\/google.com\&quot;}&quot;,
+                &quot;status&quot;: 200,
+                &quot;response_time&quot;: &quot;852&quot;,
+                &quot;created&quot;: {
+                    &quot;human&quot;: &quot;3 weeks ago&quot;,
+                    &quot;timestamp&quot;: 1694707329,
+                    &quot;string&quot;: &quot;2023-09-14 16:02:09&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 78,
+                &quot;result&quot;: &quot;{\&quot;status\&quot;:\&quot;ok\&quot;,\&quot;url\&quot;:\&quot;https:\\/\\/google.com\&quot;}&quot;,
+                &quot;status&quot;: 200,
+                &quot;response_time&quot;: &quot;791&quot;,
+                &quot;created&quot;: {
+                    &quot;human&quot;: &quot;3 weeks ago&quot;,
+                    &quot;timestamp&quot;: 1694707358,
+                    &quot;string&quot;: &quot;2023-09-14 16:02:38&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 81,
+                &quot;result&quot;: &quot;{\&quot;status\&quot;:\&quot;ok\&quot;,\&quot;url\&quot;:\&quot;https:\\/\\/google.com\&quot;}&quot;,
+                &quot;status&quot;: 200,
+                &quot;response_time&quot;: &quot;829&quot;,
+                &quot;created&quot;: {
+                    &quot;human&quot;: &quot;3 weeks ago&quot;,
+                    &quot;timestamp&quot;: 1694707444,
+                    &quot;string&quot;: &quot;2023-09-14 16:04:04&quot;
+                }
+            },
+            {
+                &quot;id&quot;: 84,
+                &quot;result&quot;: &quot;{\&quot;status\&quot;:\&quot;ok\&quot;,\&quot;url\&quot;:\&quot;https:\\/\\/google.com\&quot;}&quot;,
+                &quot;status&quot;: 200,
+                &quot;response_time&quot;: &quot;890&quot;,
+                &quot;created&quot;: {
+                    &quot;human&quot;: &quot;3 weeks ago&quot;,
+                    &quot;timestamp&quot;: 1694707654,
+                    &quot;string&quot;: &quot;2023-09-14 16:07:34&quot;
+                }
+            }
+        ]
+    }
+]</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-sites" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-sites"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-sites"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-sites" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-sites">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-sites" data-method="GET"
+      data-path="api/v1/sites"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-sites', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-sites"
+                    onclick="tryItOut('GETapi-v1-sites');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-sites"
+                    onclick="cancelTryOut('GETapi-v1-sites');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-sites"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/sites</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-sites"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-sites"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-POSTapi-webhook-telegram">POST api/webhook/telegram</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-webhook-telegram">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://uptime.test/api/webhook/telegram" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://uptime.test/api/webhook/telegram"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-webhook-telegram">
+</span>
+<span id="execution-results-POSTapi-webhook-telegram" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-webhook-telegram"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-webhook-telegram"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-webhook-telegram" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-webhook-telegram">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-webhook-telegram" data-method="POST"
+      data-path="api/webhook/telegram"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-webhook-telegram', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-webhook-telegram"
+                    onclick="tryItOut('POSTapi-webhook-telegram');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-webhook-telegram"
+                    onclick="cancelTryOut('POSTapi-webhook-telegram');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-webhook-telegram"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/webhook/telegram</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-webhook-telegram"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-webhook-telegram"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+            
+
         
     </div>
     <div class="dark-box">

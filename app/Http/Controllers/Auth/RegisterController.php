@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Hash;
 use Symfony\Component\HttpFoundation\Response;
 use Throwable;
 
+/**
+ * Register
+ *
+ * @group Authentication
+ *
+ * APIs fo register and login
+ */
 class RegisterController extends Controller
 {
     public function __construct(
@@ -22,6 +29,15 @@ class RegisterController extends Controller
     {
     }
 
+    /**
+     * Register
+     *
+     * Create a new user
+     *
+     * @param RegisterRequest $request The incoming register request.
+     * @return Responsable The response with the created user
+     * @throws AuthenticationException If failed to create a user.
+     */
     public function register(RegisterRequest $request): Responsable
     {
         try {

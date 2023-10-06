@@ -11,6 +11,12 @@ use Illuminate\Contracts\Support\Responsable;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Contracts\Auth\Factory;
 
+/**
+ *
+ * @group Authentication
+ *
+ * APIs fo register and login
+ */
 class LoginController extends Controller
 {
 
@@ -18,8 +24,18 @@ class LoginController extends Controller
         private readonly Factory            $auth,
         private readonly AccessTokenService $tokenService,
     )
-    {
-    }
+    {}
+
+    /**
+     * Login
+     *
+     * Log in a user with the provided credentials.
+     *
+     * @param LoginRequest $request The request object containing the email and password.
+     * @return Responsable The response object containing the generated token.
+     * @throws AuthenticationException if the authentication attempt fails.
+     *
+     */
     public function login(LoginRequest $request): Responsable
     {
         if (!$this->auth->guard()->attempt($request->only('email', 'password'))) {

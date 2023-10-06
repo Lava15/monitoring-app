@@ -6,5 +6,347 @@ info:
 servers:
   -
     url: 'http://uptime.test'
-paths: []
-tags: []
+paths:
+  /api/v1/login:
+    post:
+      summary: Login
+      operationId: login
+      description: 'Log in a user with the provided credentials.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: ida.balistreri@example.com
+                password:
+                  type: string
+                  description: ''
+                  example: d%xPl1~qWuTt
+              required:
+                - email
+                - password
+      security: []
+  /api/v1/register:
+    post:
+      summary: Register
+      operationId: register
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
+                  example: noimlpi
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: mhowell@example.com
+                password:
+                  type: string
+                  description: ''
+                  example: 'G{>Go9D'
+              required:
+                - name
+                - email
+                - password
+      security: []
+  /api/user:
+    get:
+      summary: ''
+      operationId: getApiUser
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/home:
+    get:
+      summary: ''
+      operationId: getApiV1Home
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: string
+                example: 'Welcome to home route api'
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/sites:
+    get:
+      summary: 'Retrieve a collection of sites.'
+      operationId: retrieveACollectionOfSites
+      description: 'Returns response to client as json'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example:
+                  -
+                    id: 1
+                    name: Goggle
+                    urls:
+                      -
+                        Home: /
+                        url: 'https://google.com'
+                    created:
+                      human: '1 month ago'
+                      timestamp: 1691770899
+                      string: '2023-08-11 16:21:39'
+                    checks:
+                      -
+                        id: 29
+                        result: '{"status":"ok","url":"https:\/\/google.com"}'
+                        status: 200
+                        response_time: '1824'
+                        created:
+                          human: '3 weeks ago'
+                          timestamp: 1694450436
+                          string: '2023-09-11 16:40:36'
+                      -
+                        id: 32
+                        result: '{"status":"ok","url":"https:\/\/google.com"}'
+                        status: 200
+                        response_time: '926'
+                        created:
+                          human: '3 weeks ago'
+                          timestamp: 1694450448
+                          string: '2023-09-11 16:40:48'
+                      -
+                        id: 35
+                        result: '{"status":"ok","url":"https:\/\/google.com"}'
+                        status: 200
+                        response_time: '954'
+                        created:
+                          human: '3 weeks ago'
+                          timestamp: 1694450460
+                          string: '2023-09-11 16:41:00'
+                      -
+                        id: 19
+                        result: '{"status":"ok","url":"https:\/\/google.com"}'
+                        status: 200
+                        response_time: '1104'
+                        created:
+                          human: '3 weeks ago'
+                          timestamp: 1694450398
+                          string: '2023-09-11 16:39:58'
+                      -
+                        id: 20
+                        result: '{"status":"ok","url":"https:\/\/google.com"}'
+                        status: 200
+                        response_time: '1342'
+                        created:
+                          human: '3 weeks ago'
+                          timestamp: 1694450400
+                          string: '2023-09-11 16:40:00'
+                      -
+                        id: 23
+                        result: '{"status":"ok","url":"https:\/\/google.com"}'
+                        status: 200
+                        response_time: '1088'
+                        created:
+                          human: '3 weeks ago'
+                          timestamp: 1694450413
+                          string: '2023-09-11 16:40:13'
+                      -
+                        id: 26
+                        result: '{"status":"ok","url":"https:\/\/google.com"}'
+                        status: 200
+                        response_time: '1108'
+                        created:
+                          human: '3 weeks ago'
+                          timestamp: 1694450424
+                          string: '2023-09-11 16:40:24'
+                      -
+                        id: 38
+                        result: '{"status":"ok","url":"https:\/\/google.com"}'
+                        status: 200
+                        response_time: '1097'
+                        created:
+                          human: '3 weeks ago'
+                          timestamp: 1694450790
+                          string: '2023-09-11 16:46:30'
+                      -
+                        id: 41
+                        result: '{"status":"ok","url":"https:\/\/google.com"}'
+                        status: 200
+                        response_time: '1055'
+                        created:
+                          human: '3 weeks ago'
+                          timestamp: 1694450948
+                          string: '2023-09-11 16:49:08'
+                      -
+                        id: 44
+                        result: '{"status":"ok","url":"https:\/\/google.com"}'
+                        status: 200
+                        response_time: '875'
+                        created:
+                          human: '3 weeks ago'
+                          timestamp: 1694705035
+                          string: '2023-09-14 15:23:55'
+                      -
+                        id: 47
+                        result: '{"status":"ok","url":"https:\/\/google.com"}'
+                        status: 200
+                        response_time: '824'
+                        created:
+                          human: '3 weeks ago'
+                          timestamp: 1694705304
+                          string: '2023-09-14 15:28:24'
+                      -
+                        id: 50
+                        result: '{"status":"ok","url":"https:\/\/google.com"}'
+                        status: 200
+                        response_time: '889'
+                        created:
+                          human: '3 weeks ago'
+                          timestamp: 1694705396
+                          string: '2023-09-14 15:29:56'
+                      -
+                        id: 53
+                        result: '{"status":"ok","url":"https:\/\/google.com"}'
+                        status: 200
+                        response_time: '835'
+                        created:
+                          human: '3 weeks ago'
+                          timestamp: 1694706002
+                          string: '2023-09-14 15:40:02'
+                      -
+                        id: 56
+                        result: '{"status":"ok","url":"https:\/\/google.com"}'
+                        status: 200
+                        response_time: '3904'
+                        created:
+                          human: '3 weeks ago'
+                          timestamp: 1694706513
+                          string: '2023-09-14 15:48:33'
+                      -
+                        id: 60
+                        result: '{"status":"ok","url":"https:\/\/google.com"}'
+                        status: 200
+                        response_time: '834'
+                        created:
+                          human: '3 weeks ago'
+                          timestamp: 1694706855
+                          string: '2023-09-14 15:54:15'
+                      -
+                        id: 63
+                        result: '{"status":"ok","url":"https:\/\/google.com"}'
+                        status: 200
+                        response_time: '1273'
+                        created:
+                          human: '3 weeks ago'
+                          timestamp: 1694706929
+                          string: '2023-09-14 15:55:29'
+                      -
+                        id: 66
+                        result: '{"status":"ok","url":"https:\/\/google.com"}'
+                        status: 200
+                        response_time: '910'
+                        created:
+                          human: '3 weeks ago'
+                          timestamp: 1694707104
+                          string: '2023-09-14 15:58:24'
+                      -
+                        id: 69
+                        result: '{"status":"ok","url":"https:\/\/google.com"}'
+                        status: 200
+                        response_time: '901'
+                        created:
+                          human: '3 weeks ago'
+                          timestamp: 1694707175
+                          string: '2023-09-14 15:59:35'
+                      -
+                        id: 72
+                        result: '{"status":"ok","url":"https:\/\/google.com"}'
+                        status: 200
+                        response_time: '839'
+                        created:
+                          human: '3 weeks ago'
+                          timestamp: 1694707248
+                          string: '2023-09-14 16:00:48'
+                      -
+                        id: 75
+                        result: '{"status":"ok","url":"https:\/\/google.com"}'
+                        status: 200
+                        response_time: '852'
+                        created:
+                          human: '3 weeks ago'
+                          timestamp: 1694707329
+                          string: '2023-09-14 16:02:09'
+                      -
+                        id: 78
+                        result: '{"status":"ok","url":"https:\/\/google.com"}'
+                        status: 200
+                        response_time: '791'
+                        created:
+                          human: '3 weeks ago'
+                          timestamp: 1694707358
+                          string: '2023-09-14 16:02:38'
+                      -
+                        id: 81
+                        result: '{"status":"ok","url":"https:\/\/google.com"}'
+                        status: 200
+                        response_time: '829'
+                        created:
+                          human: '3 weeks ago'
+                          timestamp: 1694707444
+                          string: '2023-09-14 16:04:04'
+                      -
+                        id: 84
+                        result: '{"status":"ok","url":"https:\/\/google.com"}'
+                        status: 200
+                        response_time: '890'
+                        created:
+                          human: '3 weeks ago'
+                          timestamp: 1694707654
+                          string: '2023-09-14 16:07:34'
+      tags:
+        - Endpoints
+      security: []
+  /api/webhook/telegram:
+    post:
+      summary: ''
+      operationId: postApiWebhookTelegram
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+tags:
+  -
+    name: Authentication
+    description: "\nAPIs fo register and login"
+  -
+    name: Endpoints
+    description: ''

@@ -10,11 +10,254 @@
     ],
     "info": {
         "name": "Monitoring APP",
-        "_postman_id": "d3cbd3bb-43d0-49b7-933c-0feec76e5055",
+        "_postman_id": "061927a3-9970-4775-a6d0-beab3ebfff29",
         "description": "Checks uptime of sites",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
-    "item": [],
+    "item": [
+        {
+            "name": "Authentication",
+            "description": "\nAPIs fo register and login",
+            "item": [
+                {
+                    "name": "Login",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"ida.balistreri@example.com\",\"password\":\"d%xPl1~qWuTt\"}"
+                        },
+                        "description": "Log in a user with the provided credentials.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Register",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"noimlpi\",\"email\":\"mhowell@example.com\",\"password\":\"G{>Go9D\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/v1\/home",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/home",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/home"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "55"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "\"Welcome to home route api\"",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Retrieve a collection of sites.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/sites",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/sites"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Returns response to client as json",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "54"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "[{\"id\":1,\"name\":\"Goggle\",\"urls\":[{\"Home\":\"\\\/\",\"url\":\"https:\\\/\\\/google.com\"}],\"created\":{\"human\":\"1 month ago\",\"timestamp\":1691770899,\"string\":\"2023-08-11 16:21:39\"},\"checks\":[{\"id\":29,\"result\":\"{\\\"status\\\":\\\"ok\\\",\\\"url\\\":\\\"https:\\\\\\\/\\\\\\\/google.com\\\"}\",\"status\":200,\"response_time\":\"1824\",\"created\":{\"human\":\"3 weeks ago\",\"timestamp\":1694450436,\"string\":\"2023-09-11 16:40:36\"}},{\"id\":32,\"result\":\"{\\\"status\\\":\\\"ok\\\",\\\"url\\\":\\\"https:\\\\\\\/\\\\\\\/google.com\\\"}\",\"status\":200,\"response_time\":\"926\",\"created\":{\"human\":\"3 weeks ago\",\"timestamp\":1694450448,\"string\":\"2023-09-11 16:40:48\"}},{\"id\":35,\"result\":\"{\\\"status\\\":\\\"ok\\\",\\\"url\\\":\\\"https:\\\\\\\/\\\\\\\/google.com\\\"}\",\"status\":200,\"response_time\":\"954\",\"created\":{\"human\":\"3 weeks ago\",\"timestamp\":1694450460,\"string\":\"2023-09-11 16:41:00\"}},{\"id\":19,\"result\":\"{\\\"status\\\":\\\"ok\\\",\\\"url\\\":\\\"https:\\\\\\\/\\\\\\\/google.com\\\"}\",\"status\":200,\"response_time\":\"1104\",\"created\":{\"human\":\"3 weeks ago\",\"timestamp\":1694450398,\"string\":\"2023-09-11 16:39:58\"}},{\"id\":20,\"result\":\"{\\\"status\\\":\\\"ok\\\",\\\"url\\\":\\\"https:\\\\\\\/\\\\\\\/google.com\\\"}\",\"status\":200,\"response_time\":\"1342\",\"created\":{\"human\":\"3 weeks ago\",\"timestamp\":1694450400,\"string\":\"2023-09-11 16:40:00\"}},{\"id\":23,\"result\":\"{\\\"status\\\":\\\"ok\\\",\\\"url\\\":\\\"https:\\\\\\\/\\\\\\\/google.com\\\"}\",\"status\":200,\"response_time\":\"1088\",\"created\":{\"human\":\"3 weeks ago\",\"timestamp\":1694450413,\"string\":\"2023-09-11 16:40:13\"}},{\"id\":26,\"result\":\"{\\\"status\\\":\\\"ok\\\",\\\"url\\\":\\\"https:\\\\\\\/\\\\\\\/google.com\\\"}\",\"status\":200,\"response_time\":\"1108\",\"created\":{\"human\":\"3 weeks ago\",\"timestamp\":1694450424,\"string\":\"2023-09-11 16:40:24\"}},{\"id\":38,\"result\":\"{\\\"status\\\":\\\"ok\\\",\\\"url\\\":\\\"https:\\\\\\\/\\\\\\\/google.com\\\"}\",\"status\":200,\"response_time\":\"1097\",\"created\":{\"human\":\"3 weeks ago\",\"timestamp\":1694450790,\"string\":\"2023-09-11 16:46:30\"}},{\"id\":41,\"result\":\"{\\\"status\\\":\\\"ok\\\",\\\"url\\\":\\\"https:\\\\\\\/\\\\\\\/google.com\\\"}\",\"status\":200,\"response_time\":\"1055\",\"created\":{\"human\":\"3 weeks ago\",\"timestamp\":1694450948,\"string\":\"2023-09-11 16:49:08\"}},{\"id\":44,\"result\":\"{\\\"status\\\":\\\"ok\\\",\\\"url\\\":\\\"https:\\\\\\\/\\\\\\\/google.com\\\"}\",\"status\":200,\"response_time\":\"875\",\"created\":{\"human\":\"3 weeks ago\",\"timestamp\":1694705035,\"string\":\"2023-09-14 15:23:55\"}},{\"id\":47,\"result\":\"{\\\"status\\\":\\\"ok\\\",\\\"url\\\":\\\"https:\\\\\\\/\\\\\\\/google.com\\\"}\",\"status\":200,\"response_time\":\"824\",\"created\":{\"human\":\"3 weeks ago\",\"timestamp\":1694705304,\"string\":\"2023-09-14 15:28:24\"}},{\"id\":50,\"result\":\"{\\\"status\\\":\\\"ok\\\",\\\"url\\\":\\\"https:\\\\\\\/\\\\\\\/google.com\\\"}\",\"status\":200,\"response_time\":\"889\",\"created\":{\"human\":\"3 weeks ago\",\"timestamp\":1694705396,\"string\":\"2023-09-14 15:29:56\"}},{\"id\":53,\"result\":\"{\\\"status\\\":\\\"ok\\\",\\\"url\\\":\\\"https:\\\\\\\/\\\\\\\/google.com\\\"}\",\"status\":200,\"response_time\":\"835\",\"created\":{\"human\":\"3 weeks ago\",\"timestamp\":1694706002,\"string\":\"2023-09-14 15:40:02\"}},{\"id\":56,\"result\":\"{\\\"status\\\":\\\"ok\\\",\\\"url\\\":\\\"https:\\\\\\\/\\\\\\\/google.com\\\"}\",\"status\":200,\"response_time\":\"3904\",\"created\":{\"human\":\"3 weeks ago\",\"timestamp\":1694706513,\"string\":\"2023-09-14 15:48:33\"}},{\"id\":60,\"result\":\"{\\\"status\\\":\\\"ok\\\",\\\"url\\\":\\\"https:\\\\\\\/\\\\\\\/google.com\\\"}\",\"status\":200,\"response_time\":\"834\",\"created\":{\"human\":\"3 weeks ago\",\"timestamp\":1694706855,\"string\":\"2023-09-14 15:54:15\"}},{\"id\":63,\"result\":\"{\\\"status\\\":\\\"ok\\\",\\\"url\\\":\\\"https:\\\\\\\/\\\\\\\/google.com\\\"}\",\"status\":200,\"response_time\":\"1273\",\"created\":{\"human\":\"3 weeks ago\",\"timestamp\":1694706929,\"string\":\"2023-09-14 15:55:29\"}},{\"id\":66,\"result\":\"{\\\"status\\\":\\\"ok\\\",\\\"url\\\":\\\"https:\\\\\\\/\\\\\\\/google.com\\\"}\",\"status\":200,\"response_time\":\"910\",\"created\":{\"human\":\"3 weeks ago\",\"timestamp\":1694707104,\"string\":\"2023-09-14 15:58:24\"}},{\"id\":69,\"result\":\"{\\\"status\\\":\\\"ok\\\",\\\"url\\\":\\\"https:\\\\\\\/\\\\\\\/google.com\\\"}\",\"status\":200,\"response_time\":\"901\",\"created\":{\"human\":\"3 weeks ago\",\"timestamp\":1694707175,\"string\":\"2023-09-14 15:59:35\"}},{\"id\":72,\"result\":\"{\\\"status\\\":\\\"ok\\\",\\\"url\\\":\\\"https:\\\\\\\/\\\\\\\/google.com\\\"}\",\"status\":200,\"response_time\":\"839\",\"created\":{\"human\":\"3 weeks ago\",\"timestamp\":1694707248,\"string\":\"2023-09-14 16:00:48\"}},{\"id\":75,\"result\":\"{\\\"status\\\":\\\"ok\\\",\\\"url\\\":\\\"https:\\\\\\\/\\\\\\\/google.com\\\"}\",\"status\":200,\"response_time\":\"852\",\"created\":{\"human\":\"3 weeks ago\",\"timestamp\":1694707329,\"string\":\"2023-09-14 16:02:09\"}},{\"id\":78,\"result\":\"{\\\"status\\\":\\\"ok\\\",\\\"url\\\":\\\"https:\\\\\\\/\\\\\\\/google.com\\\"}\",\"status\":200,\"response_time\":\"791\",\"created\":{\"human\":\"3 weeks ago\",\"timestamp\":1694707358,\"string\":\"2023-09-14 16:02:38\"}},{\"id\":81,\"result\":\"{\\\"status\\\":\\\"ok\\\",\\\"url\\\":\\\"https:\\\\\\\/\\\\\\\/google.com\\\"}\",\"status\":200,\"response_time\":\"829\",\"created\":{\"human\":\"3 weeks ago\",\"timestamp\":1694707444,\"string\":\"2023-09-14 16:04:04\"}},{\"id\":84,\"result\":\"{\\\"status\\\":\\\"ok\\\",\\\"url\\\":\\\"https:\\\\\\\/\\\\\\\/google.com\\\"}\",\"status\":200,\"response_time\":\"890\",\"created\":{\"human\":\"3 weeks ago\",\"timestamp\":1694707654,\"string\":\"2023-09-14 16:07:34\"}}]}]",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/webhook\/telegram",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/webhook\/telegram",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/webhook\/telegram"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
     "auth": {
         "type": "noauth"
     }
