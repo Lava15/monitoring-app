@@ -13,13 +13,13 @@ class TelegramWebhhokController extends Controller
     {
     }
 
-    public function handleMessage()
+    public function handleMessage(): void
     {
         $this->service->sendMessage();
     }
 
-//    public function sendPhoto()
-//    {
-//        $this->service->sendFiles();
-//    }
+    public function sendPhoto(): void
+    {
+        $this->service->sendFiles();
+    }
 }

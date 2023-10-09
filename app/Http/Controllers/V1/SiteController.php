@@ -12,7 +12,14 @@ use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
-
+/**
+ * Site Resource
+ *
+ * @group Sites
+ *
+ * APIs to work woth sites
+ *
+ */
 class SiteController extends Controller
 {
 
@@ -38,6 +45,14 @@ class SiteController extends Controller
         );
     }
 
+    /**
+     * Add a collection of sites
+     *
+     * Returns new created site as json
+     *
+     * @param SiteRequest $request
+     * @return Responsable
+     */
     public function store(SiteRequest $request): Responsable
     {
         $site = Site::query()->create([

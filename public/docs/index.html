@@ -90,11 +90,21 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-home">
                                 <a href="#endpoints-GETapi-v1-home">GET api/v1/home</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-sites">
-                                <a href="#endpoints-GETapi-v1-sites">Retrieve a collection of sites.</a>
-                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-webhook-telegram">
                                 <a href="#endpoints-POSTapi-webhook-telegram">POST api/webhook/telegram</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-webhook-telegram-send-file">
+                                <a href="#endpoints-POSTapi-webhook-telegram-send-file">POST api/webhook/telegram/send-file</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-sites" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="sites">
+                    <a href="#sites">Sites</a>
+                </li>
+                                    <ul id="tocify-subheader-sites" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="sites-GETapi-v1-sites">
+                                <a href="#sites-GETapi-v1-sites">Retrieve a collection of sites.</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -107,7 +117,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: October 6, 2023</li>
+        <li>Last updated: October 9, 2023</li>
     </ul>
 </div>
 
@@ -147,8 +157,8 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"ida.balistreri@example.com\",
-    \"password\": \"d%xPl1~qWuTt\"
+    \"email\": \"mandy.kub@example.org\",
+    \"password\": \"O}vvg(F64~f\\\\\\/\"
 }"
 </code></pre></div>
 
@@ -164,8 +174,8 @@ const headers = {
 };
 
 let body = {
-    "email": "ida.balistreri@example.com",
-    "password": "d%xPl1~qWuTt"
+    "email": "mandy.kub@example.org",
+    "password": "O}vvg(F64~f\\\/"
 };
 
 fetch(url, {
@@ -254,10 +264,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-v1-login"
-               value="ida.balistreri@example.com"
+               value="mandy.kub@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>ida.balistreri@example.com</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>mandy.kub@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -265,10 +275,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-v1-login"
-               value="d%xPl1~qWuTt"
+               value="O}vvg(F64~f\/"
                data-component="body">
     <br>
-<p>Example: <code>d%xPl1~qWuTt</code></p>
+<p>Example: <code>O}vvg(F64~f\/</code></p>
         </div>
         </form>
 
@@ -277,7 +287,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>
 </p>
 
-
+<p>Create a new user</p>
 
 <span id="example-requests-POSTapi-v1-register">
 <blockquote>Example request:</blockquote>
@@ -289,9 +299,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"noimlpi\",
-    \"email\": \"mhowell@example.com\",
-    \"password\": \"G{&gt;Go9D\"
+    \"name\": \"vvdcblqdcsubixe\",
+    \"email\": \"gabshire@example.com\",
+    \"password\": \"+Pa^JSitnTLQ6+g\"
 }"
 </code></pre></div>
 
@@ -307,9 +317,9 @@ const headers = {
 };
 
 let body = {
-    "name": "noimlpi",
-    "email": "mhowell@example.com",
-    "password": "G{&gt;Go9D"
+    "name": "vvdcblqdcsubixe",
+    "email": "gabshire@example.com",
+    "password": "+Pa^JSitnTLQ6+g"
 };
 
 fetch(url, {
@@ -398,10 +408,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-register"
-               value="noimlpi"
+               value="vvdcblqdcsubixe"
                data-component="body">
     <br>
-<p>Must be at least 2 characters. Must not be greater than 255 characters. Example: <code>noimlpi</code></p>
+<p>Must be at least 2 characters. Must not be greater than 255 characters. Example: <code>vvdcblqdcsubixe</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -409,10 +419,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-v1-register"
-               value="mhowell@example.com"
+               value="gabshire@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>mhowell@example.com</code></p>
+<p>Must be a valid email address. Example: <code>gabshire@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -420,10 +430,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-v1-register"
-               value="G{>Go9D"
+               value="+Pa^JSitnTLQ6+g"
                data-component="body">
     <br>
-<p>Example: <code>G{&gt;Go9D</code></p>
+<p>Example: <code>+Pa^JSitnTLQ6+g</code></p>
         </div>
         </form>
 
@@ -585,7 +595,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 55
+x-ratelimit-remaining: 58
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -663,7 +673,227 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-GETapi-v1-sites">Retrieve a collection of sites.</h2>
+                    <h2 id="endpoints-POSTapi-webhook-telegram">POST api/webhook/telegram</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-webhook-telegram">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://uptime.test/api/webhook/telegram" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://uptime.test/api/webhook/telegram"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-webhook-telegram">
+</span>
+<span id="execution-results-POSTapi-webhook-telegram" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-webhook-telegram"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-webhook-telegram"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-webhook-telegram" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-webhook-telegram">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-webhook-telegram" data-method="POST"
+      data-path="api/webhook/telegram"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-webhook-telegram', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-webhook-telegram"
+                    onclick="tryItOut('POSTapi-webhook-telegram');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-webhook-telegram"
+                    onclick="cancelTryOut('POSTapi-webhook-telegram');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-webhook-telegram"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/webhook/telegram</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-webhook-telegram"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-webhook-telegram"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-POSTapi-webhook-telegram-send-file">POST api/webhook/telegram/send-file</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-webhook-telegram-send-file">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://uptime.test/api/webhook/telegram/send-file" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://uptime.test/api/webhook/telegram/send-file"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-webhook-telegram-send-file">
+</span>
+<span id="execution-results-POSTapi-webhook-telegram-send-file" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-webhook-telegram-send-file"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-webhook-telegram-send-file"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-webhook-telegram-send-file" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-webhook-telegram-send-file">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-webhook-telegram-send-file" data-method="POST"
+      data-path="api/webhook/telegram/send-file"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-webhook-telegram-send-file', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-webhook-telegram-send-file"
+                    onclick="tryItOut('POSTapi-webhook-telegram-send-file');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-webhook-telegram-send-file"
+                    onclick="cancelTryOut('POSTapi-webhook-telegram-send-file');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-webhook-telegram-send-file"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/webhook/telegram/send-file</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-webhook-telegram-send-file"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-webhook-telegram-send-file"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                <h1 id="sites">Sites</h1>
+
+    <p>APIs to work woth sites</p>
+
+                                <h2 id="sites-GETapi-v1-sites">Retrieve a collection of sites.</h2>
 
 <p>
 </p>
@@ -709,7 +939,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 54
+x-ratelimit-remaining: 57
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -1051,114 +1281,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="Accept"                data-endpoint="GETapi-v1-sites"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        </form>
-
-                    <h2 id="endpoints-POSTapi-webhook-telegram">POST api/webhook/telegram</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-webhook-telegram">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://uptime.test/api/webhook/telegram" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://uptime.test/api/webhook/telegram"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-webhook-telegram">
-</span>
-<span id="execution-results-POSTapi-webhook-telegram" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-webhook-telegram"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-webhook-telegram"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-POSTapi-webhook-telegram" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-webhook-telegram">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-POSTapi-webhook-telegram" data-method="POST"
-      data-path="api/webhook/telegram"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-webhook-telegram', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-webhook-telegram"
-                    onclick="tryItOut('POSTapi-webhook-telegram');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-webhook-telegram"
-                    onclick="cancelTryOut('POSTapi-webhook-telegram');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-webhook-telegram"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/webhook/telegram</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-webhook-telegram"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="POSTapi-webhook-telegram"
                value="application/json"
                data-component="header">
     <br>

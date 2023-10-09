@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Monitoring APP",
-        "_postman_id": "061927a3-9970-4775-a6d0-beab3ebfff29",
+        "_postman_id": "2035ce77-843f-4105-80e9-c6cd1d250ce9",
         "description": "Checks uptime of sites",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"ida.balistreri@example.com\",\"password\":\"d%xPl1~qWuTt\"}"
+                            "raw": "{\"email\":\"mandy.kub@example.org\",\"password\":\"O}vvg(F64~f\\\\\\\/\"}"
                         },
                         "description": "Log in a user with the provided credentials.",
                         "auth": {
@@ -72,9 +72,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"noimlpi\",\"email\":\"mhowell@example.com\",\"password\":\"G{>Go9D\"}"
+                            "raw": "{\"name\":\"vvdcblqdcsubixe\",\"email\":\"gabshire@example.com\",\"password\":\"+Pa^JSitnTLQ6+g\"}"
                         },
-                        "description": "",
+                        "description": "Create a new user",
                         "auth": {
                             "type": "noauth"
                         }
@@ -158,7 +158,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "55"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -171,6 +171,68 @@
                         }
                     ]
                 },
+                {
+                    "name": "POST api\/webhook\/telegram",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/webhook\/telegram",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/webhook\/telegram"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/webhook\/telegram\/send-file",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/webhook\/telegram\/send-file",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/webhook\/telegram\/send-file"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Sites",
+            "description": "\nAPIs to work woth sites",
+            "item": [
                 {
                     "name": "Retrieve a collection of sites.",
                     "request": {
@@ -214,7 +276,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "54"
+                                    "value": "57"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -226,34 +288,6 @@
                             "name": ""
                         }
                     ]
-                },
-                {
-                    "name": "POST api\/webhook\/telegram",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/webhook\/telegram",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/webhook\/telegram"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
                 }
             ]
         }

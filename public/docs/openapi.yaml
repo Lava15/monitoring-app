@@ -26,11 +26,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: ida.balistreri@example.com
+                  example: mandy.kub@example.org
                 password:
                   type: string
                   description: ''
-                  example: d%xPl1~qWuTt
+                  example: 'O}vvg(F64~f\/'
               required:
                 - email
                 - password
@@ -39,7 +39,7 @@ paths:
     post:
       summary: Register
       operationId: register
-      description: ''
+      description: 'Create a new user'
       parameters: []
       responses: {  }
       tags:
@@ -54,15 +54,15 @@ paths:
                 name:
                   type: string
                   description: 'Must be at least 2 characters. Must not be greater than 255 characters.'
-                  example: noimlpi
+                  example: vvdcblqdcsubixe
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: mhowell@example.com
+                  example: gabshire@example.com
                 password:
                   type: string
                   description: ''
-                  example: 'G{>Go9D'
+                  example: +Pa^JSitnTLQ6+g
               required:
                 - name
                 - email
@@ -92,6 +92,26 @@ paths:
               schema:
                 type: string
                 example: 'Welcome to home route api'
+      tags:
+        - Endpoints
+      security: []
+  /api/webhook/telegram:
+    post:
+      summary: ''
+      operationId: postApiWebhookTelegram
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/webhook/telegram/send-file:
+    post:
+      summary: ''
+      operationId: postApiWebhookTelegramSendFile
+      description: ''
+      parameters: []
+      responses: {  }
       tags:
         - Endpoints
       security: []
@@ -331,17 +351,7 @@ paths:
                           timestamp: 1694707654
                           string: '2023-09-14 16:07:34'
       tags:
-        - Endpoints
-      security: []
-  /api/webhook/telegram:
-    post:
-      summary: ''
-      operationId: postApiWebhookTelegram
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
+        - Sites
       security: []
 tags:
   -
@@ -350,3 +360,6 @@ tags:
   -
     name: Endpoints
     description: ''
+  -
+    name: Sites
+    description: "\nAPIs to work woth sites"
