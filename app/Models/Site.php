@@ -15,14 +15,6 @@ class Site extends Model
 {
     use HasFactory;
 
-    /**
-     * The properties that are mass assignable.
-     *
-     * @var array
-     *
-     * @property string $name The name of the site.
-     * @property array $urls The URLs of the site.
-     */
     protected $fillable = [
         'name',
         'urls',
@@ -33,10 +25,9 @@ class Site extends Model
      *
      * In this case, 'urls' should be cast to 'array'
      *
-     * @var array
      */
     protected $casts = [
-        'urls' => 'array'
+        'urls' => 'json'
     ];
 
     public function checks(): HasMany

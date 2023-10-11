@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 class MessageResponse implements Responsable
 {
     public function __construct(
-        private readonly string|array       $data,
+        private readonly string       $message,
         private readonly int|Response $status = Response::HTTP_OK,
     )
     {
@@ -18,7 +18,7 @@ class MessageResponse implements Responsable
     public function toResponse($request): JsonResponse
     {
         return new JsonResponse(
-            data: $this->data,
+            data: $this->message,
             status: $this->status
         );
     }

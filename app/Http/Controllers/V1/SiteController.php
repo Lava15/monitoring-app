@@ -5,6 +5,7 @@ namespace App\Http\Controllers\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\SiteRequest;
 use App\Http\Resources\V1\SiteResource;
+use App\Http\Responses\MessageResponse;
 use App\Http\Responses\V1\CollectionResponse;
 use App\Models\Site;
 use App\Queries\FetchSites;
@@ -48,20 +49,36 @@ class SiteController extends Controller
     /**
      * Add a collection of sites
      *
-     * Returns new created site as json
+     * Returns message respnse
+     *
+     * @param SiteRequest $request
+     * @return Responsable *
+     */
+    public function store(SiteRequest $request): Responsable
+    {
+        $site = Site::query()->create(
+            $request->validated()
+        );
+
+        return new MessageResponse(
+            message: 'A new record created successfully',
+            status: Response::HTTP_CREATED
+        );
+    }
+
+    /**
+     * Update record
      *
      * @param SiteRequest $request
      * @return Responsable
      */
-    public function store(SiteRequest $request): Responsable
+    public function update(SiteRequest $request, Site $site): Responsable
     {
-        $site = Site::query()->create([
-            $request->validated()
-        ]);
+        $site->update($request->validated());
 
-        return new CollectionResponse(
-            data: SiteResource::make($site),
-            status: Response::HTTP_CREATED
+        return new MessageResponse(
+            message: "Record updated successfully",
+            status: Response::HTTP_ACCEPTED
         );
     }
 }
