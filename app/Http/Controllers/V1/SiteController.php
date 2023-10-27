@@ -41,7 +41,7 @@ class SiteController extends Controller
     {
         return new CollectionResponse(
             data: SiteResource::collection(
-                $this->query->handle(['checks'])->paginate(1)
+                $this->query->handle(['checks'])->paginate(10)
             ),
         );
     }
@@ -79,6 +79,21 @@ class SiteController extends Controller
         return new MessageResponse(
             message: "Record updated successfully",
             status: Response::HTTP_ACCEPTED
+        );
+    }
+
+    /**
+     * Delete a record
+     *
+     * @param Site $site
+     * @return MessageResponse
+     */
+    public function destroy(Site $site)
+    {
+        $site->delete();
+        return new MessageResponse(
+            message: "Record deleted",
+            status: Response::HTTP_NO_CONTENT
         );
     }
 }
