@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         if (!app()->isProduction()) {
             $this->call([
                 SiteSeeder::class,
+                DomainSeeder::class,
             ]);
         } else {
             abort(Response::HTTP_NOT_ACCEPTABLE);
